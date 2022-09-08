@@ -7,16 +7,20 @@ export default function About() {
     })
     const [btntext, setbtntext] = useState('Enable Dark Mode')
     let handleonclick=()=>{
-        if(mystyle.color=='white'){
+        if(mystyle.color==='white'){
             setmystyle({color:'black',
-            backgroundColor:'white'})
-            setbtntext('Enable Dark Mode')
+            backgroundColor:'white',
+            border:'1px solid black'
+        })
+        setbtntext('Enable Dark Mode');    
         }
         else{
             setmystyle({
                 color:'white',
-                backgroundColor:'black'
+                backgroundColor:'black',
+                border:'1px solid white'
             })
+            setbtntext('Enable Light Mode');
         }
     }
 
@@ -63,7 +67,7 @@ export default function About() {
             </div>
             </div>
             <div className='container my-4'>
-            <button className='btn btn-primary ' onClick={handleonclick}>{btntext}</button>
+            <button className='btn btn-primary' onClick={handleonclick}>{btntext}</button>
             </div>
     </div>
   )
